@@ -15,6 +15,8 @@ Ugulamama bir SwipeRefreshLayout ekleyerek kullanıcı sayfayı yenilediğinde u
 ### - Glide ([Source](https://github.com/bumptech/glide))
 ### - ROOM 
 ### - RecyclerView 
+### - RxJava
+### - Fragments
 
 
 **********

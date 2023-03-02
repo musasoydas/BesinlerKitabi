@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--13 layout tag aç -->
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--14 -->
+
+    <data>
+        <variable
+            name="besin"
+            type="com.example.besinlerkitabi.model.Besin" />
+        <variable
+            name="listener"
+            type="com.example.besinlerkitabi.adapter.BesinClickListener" />
+    </data>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:onClick="@{listener::besinTiklandi}"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/recycler_view_uuid_numarası"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:text="@{String.valueOf(besin.uuid)}"/>
+        <!--15 burda weight var ağırlık demek bulunduğu kabın % kaçını oluştursun olarak düşünebilirsin  -->
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:padding="4dp"
+            android:DowlandImage="@{besin.gorsel}"/>
+        <!--16 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:orientation="vertical">
+            <!--17 -->
+            <TextView
+                android:id="@+id/besinIsmiText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{besin.isim}"
+                android:textSize="30dp"
+                android:textStyle="bold"/>
+            <!--18 -->
+            <TextView
+                android:id="@+id/besinKaloriText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{besin.kalori}"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

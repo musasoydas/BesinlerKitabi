@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--8 layout tagi aç ve xmlns leri layout içine koy -9 navigationgraph oluştur ardından naviagtionu ana menüye bağla -->
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="secilenBesin"
+            type="com.example.besinlerkitabi.model.Besin" />
+        
+    </data>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.BesinDetayiFragment">
+    <!--19 -->
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="228dp"
+        android:layout_height="213dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:DowlandImage="@{secilenBesin.gorsel}"/>
+    <!--20 -->
+    <TextView
+        android:id="@+id/detay_isim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@{secilenBesin.isim}"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+    <!--21 -->
+
+    <TextView
+        android:id="@+id/detay_kalori"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@{secilenBesin.kalori}"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/detay_isim"
+        app:layout_constraintStart_toStartOf="@+id/detay_isim"
+        app:layout_constraintTop_toBottomOf="@+id/detay_isim" />
+    <!--22 -->
+
+    <TextView
+        android:id="@+id/detay_karbonhidrat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@{secilenBesin.karbonhidrat}"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/detay_kalori" />
+    <!--23 -->
+
+    <TextView
+        android:id="@+id/detay_protein"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:text="@{secilenBesin.protein}"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/detay_karbonhidrat"
+        app:layout_constraintStart_toStartOf="@+id/detay_karbonhidrat"
+        app:layout_constraintTop_toBottomOf="@+id/detay_karbonhidrat" />
+    <!--24 - 25 view ,viewmodel,model package oluşturduk ve ardından besinlerdetay,besinlerlistesi,mainacvity view attık
+    model packagine yeni besin class açtık-->
+
+    <TextView
+        android:id="@+id/detay_yag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:text="@{secilenBesin.yag}"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/detay_protein"
+        app:layout_constraintStart_toStartOf="@+id/detay_protein"
+        app:layout_constraintTop_toBottomOf="@+id/detay_protein" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
